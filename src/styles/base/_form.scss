@@ -1,0 +1,30 @@
+input {
+    &.field {
+        border-radius: 6px;
+        box-shadow: 0 0 0 1px #e2e2e2 inset, 0 0 0 0 transparent;
+        width: 100%;
+        font-size: 16px;
+        height: 42px;
+        text-indent: 0.8em;
+    }
+}
+
+button {
+    &.large.button {
+        background-color: #1087bc;
+        color: #fff;
+        height: 42px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    &.large.form.button {
+        background-color: #c9a91f;
+        width: 100%;
+
+        &:hover {
+            background-color: #b99d28;
+        }
+    }
+}
