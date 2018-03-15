@@ -45,9 +45,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "NODE_ENV=src node scripts/start.js",
-    "build": "NODE_ENV=src node scripts/build.js",
-    "test": "NODE_ENV=src node scripts/test.js --env=jsdom"
+    "start": "NODE_PATH=src node scripts/start.js",
+    "build": "NODE_PATH=src node scripts/build.js",
+    "test": "NODE_PATH=src node scripts/test.js --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [
