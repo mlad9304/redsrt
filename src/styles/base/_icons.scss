@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'pro-font';
-  src: url('static/fonts/pro-font.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .icon-sort:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'boilerplatebuilder' !important;

@@ -38,25 +38,25 @@ class LogIn extends Component {
     const { email, password, staySignedIn } = this.state
 
     return (
-      <div className={cx("loginPage")}>
-        <div className={cx("wrapper")}>
-          <div className={cx("loginForm")}>
-            <div className={cx("loginForm__title")}>
+      <div className="loginPage">
+        <div className="wrapper">
+          <div className="loginForm">
+            <div className="loginForm__title">
               <img src="https://d1xvn5mjulg4qv.cloudfront.net/3.0.0/images/logo@3x.png" alt="" />
             </div>
 
-            <div className={cx("loginForm__content")}>
+            <div className={"loginForm__content"}>
               <form onSubmit={this.handleSubmit}>
                 <div>
-                  <input className={cx("field")} placeholder="Email" type="email" onChange={evt => this.handleChange('email', evt)} value={email} required autoFocus />
+                  <input className="field" placeholder="Email" type="email" onChange={evt => this.handleChange('email', evt)} value={email} required autoFocus />
                 </div>
                 <div>
-                  <input className={cx("field")} placeholder="Password" type="password" onChange={evt => this.handleChange('password', evt)} value={password} required />
+                  <input className="field" placeholder="Password" type="password" onChange={evt => this.handleChange('password', evt)} value={password} required />
                 </div>
                 <div>
-                  <button className={cx("large", "form", "button")}>Sign in</button>
+                  <button className="large form button">Sign in</button>
                 </div>
-                <div className={cx("checkbox")}>
+                <div className="checkbox">
                   <input id="stay-signed-in" type="checkbox" checked={staySignedIn} onChange={evt => this.handleChange('staySignedIn', evt)} />
                   <div id="stay-signed-in-replacer" className={staySignedIn ? 'checked' : 'unchecked'} />
                   <label id="stay-signed-in-label">Stay signed in</label>
@@ -69,12 +69,12 @@ class LogIn extends Component {
               </form>
             </div>
           </div>
-          <p className={cx("contactUs")}>
+          <p className="contactUs">
             <a href="mailto:support@boilerplatebuilder.com">Contact us</a>
           </p>
-          <p className={cx("copyRight")}>© Breck Inc. 2018, All Rights Reserved</p>
+          <p className="copyRight">© Breck Inc. 2018, All Rights Reserved</p>
         </div>
-        <button className={cx("general-help-button")}>?</button>
+        <button className="general-help-button">?</button>
       </div>
     )
   }
