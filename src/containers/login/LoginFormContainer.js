@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import LoginForm from 'components/login/LoginForm';
 import CheckBox from 'components/common/CheckBox';
 
 import './LoginFormContainer.scss';
+
+import { logIn, LOGIN } from 'api/modules/auth';
+import { requestSuccess, requestFail } from 'utils/request'
 
 class LoginFormContainer extends Component {
 
@@ -13,7 +17,7 @@ class LoginFormContainer extends Component {
         this.state = {
             email: '',
             password: '',
-            checked: false
+            staySignedIn: false
         }
     }
     
@@ -26,28 +30,43 @@ class LoginFormContainer extends Component {
     }
 
     handleCheckboxChange = (e) => {
-        const checked = !this.state.checked;
+        const staySignedIn = !this.state.staySignedIn;
         this.setState({
-            checked
+            staySignedIn
         })
     }
 
     handlerLogin = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        
+        const { logIn } = this.props;
+        logIn({ body: { ...this.state } });
+    }
+
+    componentWillReceiveProps(newProps) {
+        if(newProps.status === requestSuccess(LOGIN)) {
+            console.log('success');
+            console.log(newProps);
+        } 
+        if(newProps.status === requestFail(LOGIN)) {
+            console.log('fail');
+        }
     }
     render() {
+
+        const { email, password, staySignedIn } = this.props;
+
         return (
             <div>
                 <LoginForm 
                     onLogin={this.handlerLogin} 
                     onChange={this.handlerChange}
-                    email={this.state.email}
-                    password={this.state.password}
+                    email={email}
+                    password={password}
                     />
 
                 <CheckBox label="Stay signed in" 
-                    checked={this.state.checked} 
+                    checked={staySignedIn} 
                     onChange={this.handleCheckboxChange}/>
 
                 <div className="link_bar">
@@ -60,4 +79,14 @@ class LoginFormContainer extends Component {
     }
 }
 
-export default LoginFormContainer;
+const props = (state, ownProps) => {
+    const { token, status, error } = state.auth;
+    
+    return { token, status, error, ownProps };
+}
+
+const actions = {
+    logIn,
+}
+
+export default connect(props, actions)(LoginFormContainer);

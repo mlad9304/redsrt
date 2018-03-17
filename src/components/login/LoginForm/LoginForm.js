@@ -17,7 +17,7 @@ const LoginForm = ({
         <Input type="email" placeholder="Email" required={true} autoFocus={true} onChange={onChange} value={email}/>
         <Input type="password" placeholder="Password" required={true}  onChange={onChange} value={password}/>
         
-        <Button style="large form button" onClick={onLogin}>Sign in</Button>
+        <Button styles="large form button" onClick={onLogin}>Sign in</Button>
     </form>
     
   );

@@ -9,6 +9,7 @@ export const requestSuccess = type => `${type}/success`
 export const requestFail = type => `${type}/fail`
 
 const defaultHeaders = () => {
+
   const token = JSON.parse(localStorage.getItem('token'))
   axios.defaults.baseURL = process.env.API_ROOT + '/'
   let headers = {
