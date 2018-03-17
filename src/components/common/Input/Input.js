@@ -1,10 +1,12 @@
 import React from 'react';
 import './Input.scss';
 
-const Input = ({type, placeholder, required = false, autoFocus = false}) => {
+const Input = ({
+    ...rest
+}) => {
     return (
         <div>
-            <input className="field" placeholder={placeholder} type={type} required={required} autoFocus={autoFocus} />
+            <input className="field" {...rest} />
         </div>
     );
 }

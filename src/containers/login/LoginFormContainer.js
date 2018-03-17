@@ -7,11 +7,48 @@ import CheckBox from 'components/common/CheckBox';
 import './LoginFormContainer.scss';
 
 class LoginFormContainer extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            checked: false
+        }
+    }
+    
+    handlerChange = (e) => {
+        const {type, value} = e.target;
+
+        this.setState({
+            [type]: value
+        });
+    }
+
+    handleCheckboxChange = (e) => {
+        const checked = !this.state.checked;
+        this.setState({
+            checked
+        })
+    }
+
+    handlerLogin = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+    }
     render() {
         return (
             <div>
-                <LoginForm />
-                <CheckBox label="Stay signed in" checked={true}/>
+                <LoginForm 
+                    onLogin={this.handlerLogin} 
+                    onChange={this.handlerChange}
+                    email={this.state.email}
+                    password={this.state.password}
+                    />
+
+                <CheckBox label="Stay signed in" 
+                    checked={this.state.checked} 
+                    onChange={this.handleCheckboxChange}/>
 
                 <div className="link_bar">
                     <NavLink to="/sign-up">Create account</NavLink>

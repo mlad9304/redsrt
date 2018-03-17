@@ -1,10 +1,10 @@
 import React from 'react';
 import './Button.scss';
 
-const Button = ({style, children}) => {
+const Button = ({style, children, ...rest}) => {
     return (
         <div>
-            <button className={style}>{children}</button>
+            <button className={style} {...rest}>{children}</button>
         </div>
     );
 }

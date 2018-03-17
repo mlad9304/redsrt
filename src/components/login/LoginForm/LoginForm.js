@@ -6,13 +6,18 @@ import Input from 'components/common/Input';
 import Button from 'components/common/Button';
 
 
-const LoginForm = () => {
+const LoginForm = ({
+  onChange,
+  onLogin,
+  email,
+  password
+}) => {
   return (
     <form>
-        <Input type="email" placeholder="Email" required={true} autoFocus={true} />
-        <Input type="password" placeholder="Password" required={true} />
+        <Input type="email" placeholder="Email" required={true} autoFocus={true} onChange={onChange} value={email}/>
+        <Input type="password" placeholder="Password" required={true}  onChange={onChange} value={password}/>
         
-        <Button style="large form button">Sign in</Button>
+        <Button style="large form button" onClick={onLogin}>Sign in</Button>
     </form>
     
   );
