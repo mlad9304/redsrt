@@ -1,0 +1,73 @@
+
+.page {
+  height: 100vh;
+  background-image: url(~static/images/bg.png);
+
+  .wrapper {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 33%;
+    transform: translate(-50%, -33%);
+  }
+
+  .form {
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+
+    .title {
+      background-color: rgb(247, 247, 247);
+      padding: 30px 15px;
+      display: flex;
+      justify-content: center;
+
+      img {
+        height: 72px;
+      }
+    }
+
+    .content {
+      padding: 50px;
+
+      
+    }
+  }
+
+  .contactUs {
+    margin-top: 25px;
+    font-size: 14px;
+    text-align: center;
+
+    a {
+      color: white;
+    }
+  }
+
+  .copyRight {
+    margin-top: 25px;
+    color: rgb(87, 139, 142);
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.general-help-button {
+  color: #104747;
+  font-size: 22px;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  border: 1px solid #e1e1e1;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

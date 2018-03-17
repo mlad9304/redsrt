@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import LogIn from 'containers/LogIn';
+import Login from 'pages/Login';
 
 const Routes = () => (
   <Router>
     <Switch>
       <Redirect exact from="/" to="/login" />
-      <Route exact path="/login" component={LogIn} />
+      <Route exact path="/login" component={Login} />
     </Switch>
   </Router>
 );

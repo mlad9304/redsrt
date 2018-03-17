@@ -1,0 +1,16 @@
+.link_bar {
+    margin-top: 25px ;
+    color: rgb(168, 168, 168);
+    font-size: 12px;
+    text-align: right;
+
+    
+    span:nth-child(2) {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    a {
+      color: inherit;
+    }
+}

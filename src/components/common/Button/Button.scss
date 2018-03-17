@@ -1,0 +1,18 @@
+.large.button {
+    background-color: #1087bc;
+    color: #fff;
+    height: 42px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.large.form.button {
+    background-color: #c9a91f;
+    width: 100%;
+
+    &:hover {
+        background-color: #b99d28;
+    }
+}
+
